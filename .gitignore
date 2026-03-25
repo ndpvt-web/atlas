@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.bak*
+*.pre-*
+/tmp/
+*.log
+.DS_Store
