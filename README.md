@@ -1,18 +1,23 @@
+<div align="center">
+
+# ATLAS
+
+### Autonomous Task Learning and Adaptive Strategy
+
+**The world's first self-evolving desktop computer-use agent.**
+<br/>
+It sees your screen. It clicks, types, and navigates. And unlike every other agent --
+<br/>
+*it remembers what worked, learns from what didn't, and gets better every time it runs.*
+
+</div>
+
 <p align="center">
   <img src="https://img.shields.io/badge/macOS-Desktop%20Agent-000000?style=for-the-badge&logo=apple&logoColor=white" />
   <img src="https://img.shields.io/badge/Runtime-Self--Evolving-blueviolet?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Learning-Zero%20Retraining-success?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Modules-41-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Tools-45+-orange?style=for-the-badge" />
-</p>
-
-<h1 align="center">ATLAS</h1>
-<h3 align="center">Autonomous Task Learning and Adaptive Strategy</h3>
-
-<p align="center">
-  <strong>The world's first self-evolving desktop computer-use agent.</strong><br/>
-  It sees your screen. It clicks, types, and navigates. And unlike every other agent --<br/>
-  <em>it remembers what worked, learns from what didn't, and gets better every time it runs.</em>
 </p>
 
 <p align="center">
@@ -239,11 +244,9 @@ Built March 2026. From first screenshot capture to graduated strategies in 18 da
 
 <p align="center">
 
-**Nivesh Dommaraju** &middot; [@ndpvt-web](https://github.com/ndpvt-web)
+**Nivesh Dandyan** &middot; [LinkedIn](https://www.linkedin.com/in/nivesh-dandyan/) &middot; [@ndpvt-web](https://github.com/ndpvt-web)
 
 In collaboration with the [JC STEM Lab of Cyber Security](https://www.cs.hku.hk/research/lab/jcstem), The University of Hong Kong
-
-Supervised by [Prof. Chao Huang](https://sites.google.com/view/chaoh)
 
 </p>
 
