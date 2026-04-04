@@ -910,3 +910,5 @@ module.exports = {
   // Configuration
   isEnabled: () => AX_ENABLED,
 };
+
+async function retryAXQuery(axQueryFunction, retries = 3, delay = 500) { for (let i = 0; i < retries; i++) { try { return await axQueryFunction(); } catch (error) { if (i === retries - 1) throw error; await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, i))); } } }
