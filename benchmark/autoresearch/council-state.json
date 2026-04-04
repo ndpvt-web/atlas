@@ -1,7 +1,48 @@
 {
-  "iteration": 1,
-  "history": [],
-  "bestSuccessRate": 0,
-  "convergenceCount": 0,
+  "iteration": 6,
+  "history": [
+    {
+      "iteration": 1,
+      "hypothesis": "AX retry mechanism",
+      "verdict": "KEEP",
+      "result": "KEEP",
+      "successRate": "80.0%",
+      "winner": "challenger"
+    },
+    {
+      "iteration": 2,
+      "hypothesis": "AX fallback retry",
+      "verdict": "REVERT",
+      "result": "REVERT",
+      "successRate": "0.0%",
+      "winner": "challenger"
+    },
+    {
+      "iteration": 3,
+      "hypothesis": "parse fix iteration",
+      "verdict": "REVERT",
+      "result": "REVERT",
+      "successRate": "0.0%",
+      "winner": "N/A"
+    },
+    {
+      "iteration": 4,
+      "hypothesis": "parse fix iteration",
+      "verdict": "REVERT",
+      "result": "REVERT",
+      "successRate": "0.0%",
+      "winner": "N/A"
+    },
+    {
+      "iteration": 5,
+      "hypothesis": "App activation before action",
+      "verdict": "REVERT",
+      "result": "REVERT",
+      "successRate": "0.0%",
+      "winner": "strategist"
+    }
+  ],
+  "bestSuccessRate": 80.0,
+  "convergenceCount": 4,
   "status": "running"
 }

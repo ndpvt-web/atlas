@@ -243,17 +243,37 @@ Respond in this exact JSON format:
     if (results[i].status === 'fulfilled') {
       const raw = results[i].value;
       try {
-        // Extract JSON from response (may be wrapped in markdown, may have JS comments)
+        // Extract JSON from response (may be wrapped in markdown)
         let cleaned = raw.replace(/```json\s*/g, '').replace(/```\s*/g, '');
-        // Strip single-line JS comments from JSON (common LLM mistake)
-        cleaned = cleaned.replace(/\/\/[^\n]*/g, '');
-        // Strip trailing commas before } or ]
-        cleaned = cleaned.replace(/,\s*([\]}])/g, '$1');
         const jsonMatch = cleaned.match(/\{[\s\S]*\}/);
+        let parsed = null;
+        if (jsonMatch) {
+          // Try 1: parse as-is
+          try { parsed = JSON.parse(jsonMatch[0]); } catch(e1) {
+            // Try 2: sanitize control chars inside string values only
+            try {
+              const sanitized = jsonMatch[0].replace(/"(?:[^"\\]|\\.)*"/g, (str) =>
+                str.replace(/[\x00-\x1f]/g, (ch) => ch === '\n' ? '\\n' : ch === '\r' ? '\\r' : ch === '\t' ? '\\t' : '')
+              );
+              parsed = JSON.parse(sanitized);
+            } catch(e2) {
+              // Try 3: strip JS comments outside strings, then sanitize
+              try {
+                let stripped = jsonMatch[0].replace(/"(?:[^"\\]|\\.)*"/g, (m) => '\x00STR' + Buffer.from(m).toString('base64') + '\x00');
+                stripped = stripped.replace(/\/\/[^\n]*/g, '').replace(/,\s*([\]}])/g, '$1');
+                stripped = stripped.replace(/\x00STR([A-Za-z0-9+/=]+)\x00/g, (_, b64) => Buffer.from(b64, 'base64').toString());
+                stripped = stripped.replace(/"(?:[^"\\]|\\.)*"/g, (str) =>
+                  str.replace(/[\x00-\x1f]/g, (ch) => ch === '\n' ? '\\n' : ch === '\r' ? '\\r' : ch === '\t' ? '\\t' : '')
+                );
+                parsed = JSON.parse(stripped);
+              } catch(e3) { /* give up */ }
+            }
+          }
+        }
         proposals[role] = {
           model: MODELS[role],
           raw: raw,
-          parsed: jsonMatch ? JSON.parse(jsonMatch[0]) : null
+          parsed
         };
         console.log(`  ${role} (${MODELS[role]}): ${proposals[role].parsed?.hypothesis || 'PARSE_FAILED'}`);
       } catch (e) {
@@ -335,9 +355,18 @@ RESPOND WITH:
       try {
         const raw = judgeResults[i].value;
         let cleanedRaw = raw.replace(/```json\s*/g, '').replace(/```\s*/g, '');
-        cleanedRaw = cleanedRaw.replace(/\/\/[^\n]*/g, '').replace(/,\s*([\]}])/g, '$1');
         const jsonMatch = cleanedRaw.match(/\{[\s\S]*\}/);
-        const parsed = jsonMatch ? JSON.parse(jsonMatch[0]) : null;
+        let parsed = null;
+        if (jsonMatch) {
+          try { parsed = JSON.parse(jsonMatch[0]); } catch(e1) {
+            try {
+              const sanitized = jsonMatch[0].replace(/"(?:[^"\\]|\\.)*"/g, (str) =>
+                str.replace(/[\x00-\x1f]/g, (ch) => ch === '\n' ? '\\n' : ch === '\r' ? '\\r' : ch === '\t' ? '\\t' : '')
+              );
+              parsed = JSON.parse(sanitized);
+            } catch(e2) { /* give up */ }
+          }
+        }
         if (parsed && parsed.winner) {
           votes[parsed.winner] += 1;
           judgments.push({ judge: roles[i], ...parsed });
@@ -446,9 +475,18 @@ Respond with:
       try {
         const raw = evalResults[i].value;
         let cleanedRaw = raw.replace(/```json\s*/g, '').replace(/```\s*/g, '');
-        cleanedRaw = cleanedRaw.replace(/\/\/[^\n]*/g, '').replace(/,\s*([\]}])/g, '$1');
         const jsonMatch = cleanedRaw.match(/\{[\s\S]*\}/);
-        const parsed = jsonMatch ? JSON.parse(jsonMatch[0]) : null;
+        let parsed = null;
+        if (jsonMatch) {
+          try { parsed = JSON.parse(jsonMatch[0]); } catch(e1) {
+            try {
+              const sanitized = jsonMatch[0].replace(/"(?:[^"\\]|\\.)*"/g, (str) =>
+                str.replace(/[\x00-\x1f]/g, (ch) => ch === '\n' ? '\\n' : ch === '\r' ? '\\r' : ch === '\t' ? '\\t' : '')
+              );
+              parsed = JSON.parse(sanitized);
+            } catch(e2) { /* give up */ }
+          }
+        }
         if (parsed) {
           if (parsed.vote === 'KEEP') keepVotes++;
           else revertVotes++;

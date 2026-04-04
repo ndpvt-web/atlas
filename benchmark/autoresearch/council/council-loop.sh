@@ -11,7 +11,8 @@
 # Usage: bash council-loop.sh [--max-iterations N] [--test-tasks N]
 #
 
-set -euo pipefail
+set -uo pipefail
+# NOTE: not using -e (errexit) because git/revert operations need to tolerate failures
 
 ATLAS_ROOT="/Users/nivesh/Projects/atlas-copy"
 BENCHMARK_DIR="$ATLAS_ROOT/benchmark"
@@ -261,10 +262,21 @@ main() {
     CAPY_BRIDGE_PORT=$ATLAS_PORT nohup node server.js > /tmp/atlas-server.log 2>&1 &
     sleep 4
 
-    # Verify Atlas is running
-    if ! curl -s "http://localhost:$ATLAS_PORT/health" > /dev/null 2>&1; then
+    # Verify Atlas is running (health check + smoke test)
+    local health_ok=false
+    for i in 1 2 3; do
+      if curl -s "http://localhost:$ATLAS_PORT/health" > /dev/null 2>&1; then
+        health_ok=true
+        break
+      fi
+      sleep 2
+    done
+    if [ "$health_ok" = false ]; then
       log "ERROR: Atlas failed to restart. Reverting."
-      git checkout main
+      git reset HEAD . 2>/dev/null || true
+      git checkout -- . 2>/dev/null || true
+      git clean -fd 2>/dev/null || true
+      git checkout main 2>/dev/null || true
       git branch -D "$branch_name" 2>/dev/null || true
       CAPY_BRIDGE_PORT=$ATLAS_PORT nohup node server.js > /tmp/atlas-server.log 2>&1 &
       sleep 4
@@ -285,6 +297,7 @@ main() {
 
     if [ "$verdict" = "KEEP" ]; then
       log "VERDICT: KEEP - Merging to main"
+      git add -A && git commit -m "council iter-${iteration}: test artifacts" --allow-empty 2>/dev/null || true
       git checkout main
       git merge "$branch_name" -m "council: merge iter-${iteration} improvement"
 
@@ -305,7 +318,11 @@ main() {
       fi
     else
       log "VERDICT: REVERT - Discarding branch"
-      git checkout main
+      # Clean working tree before switching branches
+      git reset HEAD . 2>/dev/null || true
+      git checkout -- . 2>/dev/null || true
+      git clean -fd 2>/dev/null || true
+      git checkout main 2>/dev/null || true
       git branch -D "$branch_name" 2>/dev/null || true
 
       # Restart Atlas on main (clean)

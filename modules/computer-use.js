@@ -2389,3 +2389,4 @@ function getShowUIStatus() {
 }
 
 module.exports = { mountComputerUseRoutes, axGrounding: axg, executeAction, executeActionSync, agentLoop, ACTIONS, getInfo, SCREEN_W, SCREEN_H, SCALED_W, SCALED_H, SCALE_FACTOR, setMacroRecorder, queryShowUI, getShowUIStatus };
+require('./ax-grounding').invalidateCache(); // Force fresh AX tree after every action

@@ -1,14 +1,15 @@
 {
-  "timestamp": "2026-04-04T08:49:33.229Z",
-  "winner": "challenger",
+  "timestamp": "2026-04-04T10:50:48.100Z",
+  "winner": "strategist",
   "winnerProposal": {
-    "hypothesis": "Introduce a retry mechanism for AX queries in the ax-grounding module to handle intermittent failures.",
-    "rationale": "The high number of 'unknown' errors across various applications suggests a potential intermittent failure in the AX queries used for grounding UI elements. By adding a retry mechanism with exponential backoff specifically for AX grounding failures, these transient issues can be mitigated, increasing the success rate of tasks that rely on accessibility features.",
-    "targetFile": "modules/ax-grounding.js",
+    "hypothesis": "Add an automatic AX cache invalidation after every UI action to ensure grounding uses fresh AX trees.",
+    "rationale": "Many failures across multiple apps are likely due to stale AX trees after UI changes (clicks, window switches, typing) causing grounding to misidentify elements. AX trees are cached for performance, but modern UIs update rapidly and the cache TTL (3s) is too long for fast agent loops. By invalidating the cache immediately after any action, the grounding will always use the latest UI state, reducing misgroundings and silent failures.",
+    "targetFile": "modules/computer-use.js",
     "change": {
       "type": "insert",
-      "location": "within the groundElement function, after initial AX query attempt",
-      "newCode": "async function retryAXQuery(axQueryFunction, retries = 3, delay = 500) { for (let i = 0; i < retries; i++) { try { return await axQueryFunction(); } catch (error) { if (i === retries - 1) throw error; await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, i))); } } }"
+      "location": "Immediately after any UI action is executed in the executeAction or executeActions function (wherever actions are dispatched to the system)",
+      "oldCode": "// (after action execution, before next screenshot or reasoning step)",
+      "newCode": "require('./ax-grounding').invalidateCache(); // Force fresh AX tree after every action"
     },
     "expectedImpact": {
       "tasksThatShouldFix": [
@@ -81,77 +82,77 @@
         "128",
         "129"
       ],
-      "estimatedNewSuccessRate": "65%",
-      "risk": "medium"
+      "estimatedNewSuccessRate": "80-85%",
+      "risk": "low"
     }
   },
   "votes": {
-    "strategist": 0,
-    "challenger": 3,
+    "strategist": 3,
+    "challenger": 0,
     "pragmatist": 0
   },
   "judgments": [
     {
       "judge": "strategist",
-      "winner": "challenger",
-      "reasoning": "The challenger’s proposal is highly specific and directly targets a plausible root cause—intermittent AX query failures—by introducing a retry mechanism with exponential backoff. This is a well-scoped, implementable change that could realistically improve the success rate across a broad set of tasks with 'unknown' errors, and its impact can be quickly verified on relevant tasks.",
-      "concerns": "Introducing retries may increase latency and, if not carefully bounded, could mask deeper issues or cause timeouts elsewhere. There is a medium risk that retries could interfere with tasks sensitive to timing or state changes between attempts.",
+      "winner": "strategist",
+      "reasoning": "The Strategist's proposal is more specific, directly addresses a well-understood root cause (stale AX trees), and is low risk since it only affects cache invalidation timing. The change is easy to implement, test, and unlikely to break currently-passing tasks. In contrast, the Challenger's proposal (enabling ShowUI) is broader, riskier, and may introduce new issues or regressions, as it changes the grounding method system-wide.",
+      "concerns": "While the Strategist's fix is low risk, excessive cache invalidation could marginally impact performance if actions are extremely frequent. However, this is preferable to silent failures. Monitor for any performance regressions or unexpected AX errors.",
       "testTasks": [
         "3",
         "7",
         "8",
         "9",
         "16",
-        "18",
         "23",
-        "25",
         "26",
-        "29",
-        "34",
-        "39",
-        "47",
-        "54",
-        "65"
-      ],
-      "votes": {
-        "strategist_score": 7,
-        "challenger_score": 9,
-        "pragmatist_score": 8
-      }
-    },
-    {
-      "judge": "challenger",
-      "winner": "challenger",
-      "reasoning": "The Challenger's proposal is well-defined and directly targets a specific issue—intermittent AX query failures—by implementing a retry mechanism with exponential backoff. This approach is likely to improve the success rate significantly, as it addresses a root cause of the failures. The estimated impact on the success rate is substantial, and the risk of breaking existing functionality is medium, making it a balanced and promising solution.",
-      "concerns": "The main risk is that the retry mechanism could introduce delays, potentially affecting performance. Additionally, if the root cause of the failures is not addressed by retries alone, the improvement might be less than expected.",
-      "testTasks": [
-        "3",
-        "7",
-        "9",
-        "16",
-        "18",
-        "23",
-        "25",
         "28",
         "32",
         "35",
         "39",
         "42",
-        "52",
-        "55",
-        "60"
+        "54",
+        "66",
+        "109"
       ],
       "votes": {
-        "strategist_score": 6,
-        "challenger_score": 9,
-        "pragmatist_score": 7
+        "strategist_score": 9,
+        "challenger_score": 7,
+        "pragmatist_score": 5
+      }
+    },
+    {
+      "judge": "challenger",
+      "winner": "strategist",
+      "reasoning": "The strategist's proposal is more specific and directly addresses the root cause of stale AX trees, which is a common issue in dynamic UI environments. By invalidating the cache after each action, it ensures that the grounding process uses the most up-to-date information, potentially fixing a wide range of tasks. The risk is low, as it doesn't fundamentally alter the grounding mechanism but rather optimizes its accuracy.",
+      "concerns": "While the risk is low, there could be a slight performance impact due to more frequent cache invalidations. It's important to monitor for any degradation in response time.",
+      "testTasks": [
+        "3",
+        "8",
+        "16",
+        "25",
+        "28",
+        "36",
+        "42",
+        "54",
+        "66",
+        "77",
+        "84",
+        "95",
+        "101",
+        "114",
+        "126"
+      ],
+      "votes": {
+        "strategist_score": 9,
+        "challenger_score": 7,
+        "pragmatist_score": 0
       }
     },
     {
       "judge": "pragmatist",
-      "winner": "challenger",
-      "reasoning": "The challenger's proposal stands out due to its high specificity and potential impact on a large number of failing tasks (over 60 tasks listed). The retry mechanism with exponential backoff for AX queries directly addresses a plausible root cause of intermittent failures in UI grounding, which is a novel approach compared to the others. Additionally, the estimated success rate increase to 65% is ambitious yet grounded in the detailed task list provided.",
-      "concerns": "There is a medium risk that the retry mechanism could introduce delays or unexpected behavior in currently-passing tasks, especially if the exponential backoff leads to timeouts or resource contention. Careful monitoring is needed to ensure it doesn't negatively affect performance in stable scenarios.",
+      "winner": "strategist",
+      "reasoning": "The Strategist's proposal to invalidate the AX cache after every UI action directly addresses a likely root cause of failures—stale AX trees leading to misgrounding. It offers a higher estimated success rate (80-85%) compared to the Challenger's 75%, and the change is more specific and targeted at a systemic issue rather than adding a new layer of complexity with ShowUI. The risk is also rated lower, making it a safer bet for immediate improvement.",
+      "concerns": "There may be a performance overhead from frequent cache invalidation, which could slow down the agent loop and potentially impact tasks with tight timing requirements. Additionally, if some UI updates are delayed beyond the action execution, grounding might still fail.",
       "testTasks": [
         "3",
         "7",
@@ -170,9 +171,9 @@
         "35"
       ],
       "votes": {
-        "strategist_score": 6,
-        "challenger_score": 9,
-        "pragmatist_score": 5
+        "strategist_score": 9,
+        "challenger_score": 7,
+        "pragmatist_score": 0
       }
     }
   ],
@@ -182,15 +183,15 @@
     "8",
     "9",
     "16",
-    "18",
     "23",
-    "25",
     "26",
-    "29",
-    "34",
+    "28",
+    "32",
+    "35",
     "39",
-    "47",
+    "42",
     "54",
-    "65"
+    "66",
+    "109"
   ]
 }
