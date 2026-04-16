@@ -1,0 +1,67 @@
+{
+  "": {
+    "dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AtlasTutorialOverlay.d",
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AtlasTutorialOverlay.o",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/master.swiftdeps"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AnnotationRenderer.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AnnotationRenderer.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AnnotationRenderer~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AnnotationRenderer.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AnnotationRenderer.dia"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AtlasConnection.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AtlasConnection.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AtlasConnection~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AtlasConnection.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AtlasConnection.dia"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/CursorTracker.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/CursorTracker.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/CursorTracker~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/CursorTracker.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/CursorTracker.dia"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/GhostPointer.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/GhostPointer.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/GhostPointer~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/GhostPointer.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/GhostPointer.dia"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/HotkeyListener.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/HotkeyListener.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/HotkeyListener~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/HotkeyListener.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/HotkeyListener.dia"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/MicCapture.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/MicCapture.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/MicCapture~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/MicCapture.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/MicCapture.dia"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/OverlayWindow.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/OverlayWindow.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/OverlayWindow~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/OverlayWindow.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/OverlayWindow.dia"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/ProgressIndicator.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/ProgressIndicator.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/ProgressIndicator~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/ProgressIndicator.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/ProgressIndicator.dia"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/TargetHighlight.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/TargetHighlight.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/TargetHighlight~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/TargetHighlight.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/TargetHighlight.dia"
+  },
+  "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/main.swift": {
+    "object": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/main.swift.o",
+    "swiftmodule": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/main.swiftdeps",
+    "diagnostics": "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/main.dia"
+  }
+}

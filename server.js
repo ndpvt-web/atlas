@@ -379,6 +379,9 @@ const server = http.createServer(async (req, res) => {
     return res.end();
   }
 
+  // Let WebSocket upgrade requests pass through to the upgrade event handler
+  if (req.headers.upgrade && req.headers.upgrade.toLowerCase() === "websocket") return;
+
   const urlPath = req.url.split('?')[0];
   const key = `${req.method} ${urlPath}`;
 
@@ -561,6 +564,7 @@ sseWrite({ type: 'done', success: true, finalText: response });
 
 // --- Load modules ---
 try { require("./module-loader").loadModules(routes, authenticate, send); console.log("[loader] modules loaded"); } catch(e) { console.error("[loader] FAILED:", e.message); }
+try { require("./modules/tutorial-engine").mountWebSocket(server); console.log("[loader] tutorial-engine WebSocket mounted"); } catch(e) { console.log("[loader] tutorial-engine WS skipped:", e.message); }
 
 server.listen(PORT, '0.0.0.0', () => {
   console.log('');

@@ -1,0 +1,412 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.AtlasTutorialOverlay-arm64-apple-macosx26.0-release.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/sources",
+      "importPath" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AnnotationRenderer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AtlasConnection.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/CursorTracker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/GhostPointer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/HotkeyListener.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/MicCapture.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/OverlayWindow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/ProgressIndicator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/TargetHighlight.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "AtlasTutorialOverlay",
+      "moduleOutputPath" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/Modules/AtlasTutorialOverlay.swiftmodule",
+      "objects" : [
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AnnotationRenderer.swift.o",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AtlasConnection.swift.o",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/CursorTracker.swift.o",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/GhostPointer.swift.o",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/HotkeyListener.swift.o",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/MicCapture.swift.o",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/OverlayWindow.swift.o",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/ProgressIndicator.swift.o",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/TargetHighlight.swift.o",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-whole-module-optimization",
+        "-num-threads",
+        "8",
+        "-serialize-diagnostics",
+        "-O",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "AtlasTutorialOverlay_main",
+        "-swift-version",
+        "5",
+        "-framework",
+        "AVFoundation",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g"
+      ],
+      "outputFileMapPath" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AnnotationRenderer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AtlasConnection.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/CursorTracker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/GhostPointer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/HotkeyListener.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/MicCapture.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/OverlayWindow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/ProgressIndicator.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/TargetHighlight.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/Modules/AtlasTutorialOverlay.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AnnotationRenderer.swift",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AtlasConnection.swift",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/CursorTracker.swift",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/GhostPointer.swift",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/HotkeyListener.swift",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/MicCapture.swift",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/OverlayWindow.swift",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/ProgressIndicator.swift",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/TargetHighlight.swift",
+        "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/main.swift"
+      ],
+      "tempsPath" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build",
+      "wholeModuleOptimization" : true
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "AtlasTutorialOverlay" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "AtlasTutorialOverlay",
+      "-c",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AnnotationRenderer.swift",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AtlasConnection.swift",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/CursorTracker.swift",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/GhostPointer.swift",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/HotkeyListener.swift",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/MicCapture.swift",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/OverlayWindow.swift",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/ProgressIndicator.swift",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/TargetHighlight.swift",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/main.swift",
+      "-I",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-whole-module-optimization",
+      "-num-threads",
+      "8",
+      "-serialize-diagnostics",
+      "-O",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "AtlasTutorialOverlay_main",
+      "-swift-version",
+      "5",
+      "-framework",
+      "AVFoundation",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "AtlasTutorialOverlay" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AnnotationRenderer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/AtlasConnection.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/CursorTracker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/GhostPointer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/HotkeyListener.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/MicCapture.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/OverlayWindow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/ProgressIndicator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/TargetHighlight.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/Sources/main.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/sources"
+    },
+    "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AnnotationRenderer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/AtlasConnection.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/CursorTracker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/GhostPointer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/HotkeyListener.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/MicCapture.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/OverlayWindow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/ProgressIndicator.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/TargetHighlight.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.build/main.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/AtlasTutorialOverlay.product/Objects.LinkFileList"
+    },
+    "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/nivesh/Projects/atlas-copy/atlas-tutorial-overlay/.build/arm64-apple-macosx/release/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

@@ -101,6 +101,14 @@ function loadModules(routes, authenticate, send) {
   } catch (e) {
     console.log('[loader] learning skipped:', e.message);
   }
+  // Tutorial Engine module
+  try {
+    const tutorialEngine = require("./modules/tutorial-engine");
+    tutorialEngine.mountTutorialRoutes(app);
+    console.log("[loader] tutorial-engine routes mounted");
+  } catch (e) {
+    console.log("[loader] tutorial-engine skipped:", e.message);
+  }
 }
 
 module.exports = { loadModules };
