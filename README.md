@@ -1,7 +1,7 @@
 <div align="center">
 
 # ATLAS
-## The World's First Self-Evolving Desktop Computer-Use Agent.
+## Self-Evolving Desktop Computer-Use Agent .
 
 ### Autonomous Task Learning and Adaptive Strategy
 
