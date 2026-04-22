@@ -1,9 +1,9 @@
 <div align="center">
 
-# ATLAS
+# SIDDHI
 ## Self-Evolving Desktop Computer-Use Agent .
 
-### Autonomous Task Learning and Adaptive Strategy
+### Siddhi: Self-Improving Desktop Intelligence
 
 It sees your screen. It clicks, types, and navigates. And unlike every other agent --
 <br/>
@@ -25,15 +25,15 @@ JC STEM Lab of Cyber Security, The University of Hong Kong
 
 ---
 
-Every computer-use agent today -- Anthropic CUA, OpenAI Operator, Google Mariner -- starts from a blank slate every session. They burn the same tokens re-discovering the same workflows, paying the same cost, making the same mistakes. **ATLAS breaks this cycle.** It is a fully autonomous macOS desktop agent that watches itself work, extracts patterns from its own behavior, graduates successful patterns into reusable strategies, and even forges entirely new tools from repeated workflows -- all at runtime, stored as inspectable JSON, with **zero model fine-tuning**. After just a few tasks, ATLAS completes familiar workflows in 2 iterations instead of 8, at 1/14th the cost, in 1/3rd the time. It doesn't just use your computer. It masters it.
+Every computer-use agent today -- Anthropic CUA, OpenAI Operator, Google Mariner -- starts from a blank slate every session. They burn the same tokens re-discovering the same workflows, paying the same cost, making the same mistakes. **Siddhi breaks this cycle.** It is a fully autonomous macOS desktop agent that watches itself work, extracts patterns from its own behavior, graduates successful patterns into reusable strategies, and even forges entirely new tools from repeated workflows -- all at runtime, stored as inspectable JSON, with **zero model fine-tuning**. After just a few tasks, Siddhi completes familiar workflows in 2 iterations instead of 8, at 1/14th the cost, in 1/3rd the time. It doesn't just use your computer. It masters it.
 
-This is not a research prototype running on synthetic benchmarks. ATLAS operates on a real macOS desktop -- launching apps, navigating Safari, composing emails, managing files -- with a hybrid vision system that combines the macOS Accessibility API (300ms, exact coordinates) with a 2B-parameter vision model (500ms, pixel-level grounding) for elements that accessibility can't see. When something goes wrong, it detects the surprise, escalates its reasoning model from Sonnet to Opus, and falls back to AppleScript if direct interaction fails. When it succeeds, it captures the trajectory and feeds it into a three-layer learning pipeline inspired by Aristotle's concept of **Phronesis** -- practical wisdom acquired through experience.
+This is not a research prototype running on synthetic benchmarks. Siddhi operates on a real macOS desktop -- launching apps, navigating Safari, composing emails, managing files -- with a hybrid vision system that combines the macOS Accessibility API (300ms, exact coordinates) with a 2B-parameter vision model (500ms, pixel-level grounding) for elements that accessibility can't see. When something goes wrong, it detects the surprise, escalates its reasoning model from Sonnet to Opus, and falls back to AppleScript if direct interaction fails. When it succeeds, it captures the trajectory and feeds it into a three-layer learning pipeline inspired by Aristotle's concept of **Phronesis** -- practical wisdom acquired through experience.
 
 ---
 
 ## How It Learns: The Phronesis Pipeline
 
-Most agents are stateless. ATLAS has a memory that compounds.
+Most agents are stateless. Siddhi has a memory that compounds.
 
 ```
                     +---------------------------+
@@ -87,7 +87,7 @@ These numbers are from real deployment on a MacBook Pro M1, not benchmarks.
 
 | Metric | Value |
 |--------|-------|
-| Total reflections captured | **110+** (ATLAS) &nbsp; **15+** (Brain) |
+| Total reflections captured | **110+** (Siddhi) &nbsp; **15+** (Brain) |
 | Patterns extracted | **14** across 8 of 15 task categories |
 | Average pattern success rate | **78.3%** |
 | Graduated strategies | **2** (100% success, auto-promoted) |
@@ -113,7 +113,7 @@ These numbers are from real deployment on a MacBook Pro M1, not benchmarks.
 
 ## Cross-Module Experience Transfer
 
-ATLAS doesn't keep its knowledge to itself. A general-purpose **Brain** orchestrator can query ATLAS's learning store via HTTP before starting any desktop task:
+Siddhi doesn't keep its knowledge to itself. A general-purpose **Brain** orchestrator can query Siddhi's learning store via HTTP before starting any desktop task:
 
 ```
 Brain receives: "open google.com"
@@ -121,12 +121,12 @@ Brain receives: "open google.com"
   +-- Brain classifies as desktop task (keyword match)
   |
   +-- Brain calls POST /learning/context
-  |     -> ATLAS returns: strategy for safari-navigate
+  |     -> Siddhi returns: strategy for safari-navigate
   |     -> 14 keyboard shortcuts, 11 environment entities
   |
   +-- Brain injects context into system prompt
   |
-  +-- Brain delegates to ATLAS with pre-loaded experience
+  +-- Brain delegates to Siddhi with pre-loaded experience
   |
   Result: 2 iterations instead of 8. $0.08 instead of $1.17.
 ```
@@ -137,7 +137,7 @@ This is **not RAG** -- there are no human-authored documents being retrieved. Th
 
 ## Hybrid Vision Grounding
 
-ATLAS uses a two-tier grounding system to locate UI elements on screen:
+Siddhi uses a two-tier grounding system to locate UI elements on screen:
 
 | Tier | Method | Latency | What It Sees |
 |------|--------|---------|--------------|
@@ -146,7 +146,7 @@ ATLAS uses a two-tier grounding system to locate UI elements on screen:
 
 **Post-correction snap**: After every click, coordinates are snapped to the nearest AX element within a 60px radius. This corrects vision model imprecision using the accessibility tree as ground truth.
 
-**TCC Routing**: macOS Transparency, Consent, and Control blocks direct keyboard input from background processes. ATLAS routes keyboard commands through a persistent Terminal.app daemon that holds the necessary TCC grants -- invisible to the user, zero-latency overhead.
+**TCC Routing**: macOS Transparency, Consent, and Control blocks direct keyboard input from background processes. Siddhi routes keyboard commands through a persistent Terminal.app daemon that holds the necessary TCC grants -- invisible to the user, zero-latency overhead.
 
 ---
 
@@ -156,7 +156,7 @@ ATLAS uses a two-tier grounding system to locate UI elements on screen:
 server.js                          Express server (port 7888)
 |
 +-- modules/
-|   +-- computer-use.js            ATLAS agent core (~2800 lines)
+|   +-- computer-use.js            Siddhi agent core (~2800 lines)
 |   |                              Screenshot loop, OPAR cycle, escalation,
 |   |                              AppleScript fallback, trajectory capture
 |   +-- learning.js                3-layer Phronesis pipeline
@@ -189,9 +189,9 @@ server.js                          Express server (port 7888)
 
 ---
 
-## How ATLAS Compares
+## How Siddhi Compares
 
-| Capability | ATLAS | Anthropic CUA | OpenAI Operator | Google Mariner | UFO2 | OpenSpace |
+| Capability | Siddhi | Anthropic CUA | OpenAI Operator | Google Mariner | UFO2 | OpenSpace |
 |:-----------|:-----:|:-------------:|:---------------:|:--------------:|:----:|:---------:|
 | Desktop OS agent | Yes | Yes | Yes | Yes | Yes | No |
 | Runtime learning (no retraining) | **Yes** | No | No | No | No | Yes |
@@ -202,7 +202,7 @@ server.js                          Express server (port 7888)
 | Experience transfer across modules | **Yes** | No | No | No | No | No |
 | Escalation (Sonnet -> Opus) | **Yes** | N/A | N/A | N/A | No | No |
 
-OpenSpace (HKUDS, 2025) pioneered self-evolving skills for coding agents. ATLAS brings that paradigm to **real desktop computer use** -- where the agent must see pixels, click coordinates, and navigate a GUI that changes with every action.
+OpenSpace (HKUDS, 2025) pioneered self-evolving skills for coding agents. Siddhi brings that paradigm to **real desktop computer use** -- where the agent must see pixels, click coordinates, and navigate a GUI that changes with every action.
 
 ---
 
@@ -234,7 +234,7 @@ Built March 2026. From first screenshot capture to graduated strategies in 18 da
 |------|-----------|
 | Mar 8-10 | Computer-use agent core: screenshot loop, action execution |
 | Mar 10 | ShowUI-2B vision grounding integration |
-| Mar 11 | AX hybrid grounding, Phronesis pipeline, Brain-ATLAS bridge |
+| Mar 11 | AX hybrid grounding, Phronesis pipeline, Brain-Siddhi bridge |
 | Mar 14-16 | Trajectory system, macro recording, cross-app workflows |
 | Mar 17-18 | Input Bridge (TCC keyboard fix), efficiency optimizations |
 | Mar 25 | Public repository |
@@ -242,5 +242,5 @@ Built March 2026. From first screenshot capture to graduated strategies in 18 da
 ---
 
 <p align="center">
-  <sub>ATLAS: because an agent that forgets everything it learned is just an expensive screenshot viewer.</sub>
+  <sub>Siddhi: because an agent that forgets everything it learned is just an expensive screenshot viewer.</sub>
 </p>
